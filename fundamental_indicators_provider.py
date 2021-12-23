@@ -90,3 +90,4 @@ async def get_fundamental_indicators_for_company(config, company):
                 'Book value per share': 'Book/Share',
                 'Total debt/equity': 'Debt/Equity'
             })
+          
