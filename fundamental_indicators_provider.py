@@ -63,10 +63,10 @@ async def get_fundamental_indicators_for_company(config, company):
     get_data_item(company.fundamental_indicators, data, 
                 # Statistics Valuation
                 {
-                    'Market Cap (intraday) 5': 'MarketCap',
+                    'Market Cap (intraday)': 'MarketCap',
                     'Price/Sales (ttm)': 'PS',
                     'Trailing P/E': 'PE',
-                    'PEG Ratio (5 yr expected) 1': 'PEG',
+                    'PEG Ratio (5 yr expected)': 'PEG',
                     'Price/Book (mrq)': 'PB'
                 })
 

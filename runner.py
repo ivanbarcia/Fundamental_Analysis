@@ -39,7 +39,6 @@ def insert_stock_data(companies):
 
 def save_excel(companies):
     # Save company values into Excel
-    
     current = pd.DataFrame(companies) 
         
     # Create a Pandas Excel writer using XlsxWriter as the engine.
@@ -81,6 +80,15 @@ if __name__ == "__main__":
     take_values(company)
     
     company = Company('JPM')
+    take_values(company)
+    
+    company = Company('MELI')
+    take_values(company)
+    
+    company = Company('AMZN')
+    take_values(company)
+    
+    company = Company('GOOGL')
     take_values(company)
     
     # Save data into Excel
