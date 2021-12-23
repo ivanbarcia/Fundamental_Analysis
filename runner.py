@@ -1,5 +1,6 @@
 import asyncio
 import sqlite3
+from email_sender import send_email
 from fundamental_indicators_provider import Company, get_fundamental_indicators_for_company
 
 import pandas as pd
@@ -39,13 +40,14 @@ def insert_stock_data(companies):
 
 def save_excel(companies):
     # Save company values into Excel
-    current = pd.DataFrame(companies) 
+    dataframe = pd.DataFrame(companies) 
+    dataframe.set_index('Ticker')
         
     # Create a Pandas Excel writer using XlsxWriter as the engine.
     writer = pd.ExcelWriter("Fundamental_analysis.xlsx", engine="xlsxwriter")
 
     # Convert the dataframe to an XlsxWriter Excel object.
-    current.to_excel(writer, sheet_name="Companies", index=False, freeze_panes=(1, 1))
+    dataframe.to_excel(writer, sheet_name="Companies", index=False, freeze_panes=(1, 1))
 
     # # Get the xlsxwriter workbook and worksheet objects.
     # workbook = writer.book
@@ -54,6 +56,8 @@ def save_excel(companies):
     # Close the Pandas Excel writer and output the Excel file.
     writer.save()
     writer.close()
+    
+    return dataframe
 
 
 def take_values(company):    
@@ -64,8 +68,6 @@ def take_values(company):
     print(company.symbol + ' --> ')
     print(company.fundamental_indicators)
 
-    company.fundamental_indicators['company'] = company.symbol
-    
     companies.append(company.fundamental_indicators)
     
 
@@ -92,7 +94,10 @@ if __name__ == "__main__":
     take_values(company)
     
     # Save data into Excel
-    save_excel(companies)
+    companies_pd = save_excel(companies)
     
     # Save data
     # insert_stock_data(companies)
+    
+    # Send email to myself
+    send_email(companies_pd)

@@ -57,6 +57,7 @@ def get_last_data_item(result, dataframe, columns):
 
 async def get_fundamental_indicators_for_company(config, company):
     company.fundamental_indicators = {}
+    company.fundamental_indicators['Ticker'] = company.symbol
 
     data = stock_info.get_stats_valuation(company.symbol)
 
