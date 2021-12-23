@@ -40,23 +40,22 @@ def send_email(dataframe):
         </head>
     <body>
     <p>
-    Comments:<br>
-    <strong>Market Car</strong> -> Smaller cap stocks are generally riskier<br>
-    <strong>PS</strong> < 1 -> OK -> undervalued<br>
-    <strong>PE</strong> -> Higher ratio usually has a higher earning growth rate<br>
-    <strong>PEG</strong> < 1 -> OK -> cheap<br>
-    1.5 < <strong>PB</strong> < 2.5 -> OK -> cheap<br>
-    <strong>ProfitMargin</strong> -> The Higher, healthier company<br>
-    <strong>OperMargin</strong> -> The Higher, the profitable the company with lower cost<br>
-    <strong>Current Ratio</strong> > 1 -> OK -> The more business can spend on itself<br>
-    <strong>DivPayoutRatio</strong> > 100 -> the company is paying more in dividends than its earnings<br>
-    <strong>ROA</strong> -> The Higher, the more effective the management of a company<br>
-    <strong>ROE</strong> -> The Higher, the better the company in generating returns<br>
-    <strong>DebtEquity</strong> less better<br>
-    <strong>PER</strong> < 15 -> OK -> cheap<br>
+        <u>COMMENTS:</u><br>
+        <strong>Market Car</strong> -> Smaller cap stocks are generally riskier<br>
+        <strong>PS</strong> < 1 -> OK -> undervalued<br>
+        <strong>PE</strong> -> Higher ratio usually has a higher earning growth rate<br>
+        <strong>PEG</strong> < 1 -> OK -> cheap<br>
+        1.5 < <strong>PB</strong> < 2.5 -> OK -> cheap<br>
+        <strong>ProfitMargin</strong> -> The Higher, healthier company<br>
+        <strong>OperMargin</strong> -> The Higher, the profitable the company with lower cost<br>
+        <strong>Current Ratio</strong> > 1 -> OK -> The more business can spend on itself<br>
+        <strong>DivPayoutRatio</strong> > 100 -> the company is paying more in dividends than its earnings<br>
+        <strong>ROA</strong> -> The Higher, the more effective the management of a company<br>
+        <strong>ROE</strong> -> The Higher, the better the company in generating returns<br>
+        <strong>DebtEquity</strong> less better<br>
+        <strong>PER</strong> < 15 -> OK -> cheap<br>
     </p>
-    <br>      
-    <p>Companies:<br> 
+    <p><strong>COMPANIES:</strong><br> 
        %s
     </p>
     </body>
